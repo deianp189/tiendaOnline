@@ -57,11 +57,12 @@
                     </span>
                     </p>
                 </div>
+
                 <!----------------buscador----------->
                 <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
                     <input type="search" name="buscar" class="form-control" placeholder="Buscar">
                     <span class="input-group-btn">
-                        <a href="#">
+                        <a href="<?php echo $url ?>buscador/1/recientes"> <!--Desde la primera pagina y productos recientes-->
                             <button class="btn btn-default backColor" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
@@ -69,6 +70,7 @@
                     </span>
                 </div>
             </div>
+
             <!-------------Carrito de compras--------------->
             <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
                 <a href="#">

@@ -11,6 +11,8 @@
 
     <?php
 
+        session_start();
+
         $icono=ControladorPlantilla::ctrEstiloPlantilla();
 
         echo '<link rel="icono" href="http://localhost/backend/'.$icono["icono"].'">';
@@ -41,8 +43,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed">
 
-    <script src="vistas/js/plugins/jquery.min.js"></script>
-    <script src="vistas/js/plugins/bootstrap.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/jquery.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/bootstrap.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/scrollUp.js"></script>
 </head>
 <body>
     <!--------------------------- Cabecera ------------------------------>
@@ -70,7 +73,6 @@ CONTENIDO DINÁMICO
 
         $rutaCategorias=ControladorProductos::ctrMostrarCategorias($item,$valor);
 
-
         if($rutas[0] == $rutaCategorias["ruta"]){
 
             $ruta=$rutas[0];
@@ -93,7 +95,7 @@ CONTENIDO DINÁMICO
         /*=============================================
         URL'S AMIGABLES DE PRODUCTOS
         =============================================*/
-        $rutaProductos=ControladorProductos::ctrMostrarInfoProducto($item ,$valor);
+        $rutaProductos=ControladorProductos::ctrMostrarInfoProducto($item,$valor);
 
         if($rutas[0] == $rutaProductos["ruta"]){
 
@@ -111,11 +113,17 @@ CONTENIDO DINÁMICO
 
             include "modulos/infoproducto.php";
     
+        }else if($rutas[0] == "buscador"){
+
+            include "modulos/buscador.php";
+            
         }else{
-    
-            include "modulos/error404.php";
+        
+                include "modulos/error404.php";
         }
+
     }else{
+        
         
         include "modulos/slide.php";
         include "modulos/destacados.php";
@@ -124,9 +132,12 @@ CONTENIDO DINÁMICO
 
     ?>
 
+    <input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
+
     <script src="<?php echo $url; ?>vistas/js/cabecera.js"></script>
     <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
     <script src="<?php echo $url; ?>vistas/js/slide.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
     
 </body>
 </html>

@@ -36,11 +36,11 @@ public static function ctrMostrarSubCategorias($item,$valor){
 MOSTRAR PRODUCTOS
 =============================================*/
 
-public static function ctrMostrarProductos($ordenar, $item , $valor){
+public static function ctrMostrarProductos($ordenar, $item , $valor, $base, $tope, $modo){
 
     $tabla="productos";
 
-    $respuesta=ModeloProductos::mdlMostrarProductos($tabla , $ordenar, $item , $valor);
+    $respuesta=ModeloProductos::mdlMostrarProductos($tabla , $ordenar, $item , $valor, $base, $tope, $modo);
 
     return $respuesta;
 }
@@ -53,20 +53,19 @@ public static function ctrMostrarInfoProducto($item ,$valor){
 
     return $respuesta;
 }
-/*
-static public function ctrMostrarBanner($ruta){
+
+
+public static function ctrMostrarBanner($ruta){
 
     $tabla="banner";
 
     $respuesta=ModeloProductos::mdlMostrarBanner($tabla,$ruta);
 
     return $respuesta;
-
-
-
 }
 
-static public function ctrListarProductos($ordenar, $item2, $valor2){
+
+public static function ctrListarProductos($ordenar, $item2, $valor2){
 
     $tabla = "productos";
 
@@ -78,7 +77,7 @@ static public function ctrListarProductos($ordenar, $item2, $valor2){
 }
 
 
-static public function ctrBuscarProductos($busqueda ,$ordenar ,$modo ,$base ,$tope){
+public static function ctrBuscarProductos($busqueda ,$ordenar ,$modo ,$base ,$tope){
 
     $tabla="productos";
 
@@ -89,7 +88,7 @@ static public function ctrBuscarProductos($busqueda ,$ordenar ,$modo ,$base ,$to
 
 }
 
-   static public function ctrListarProductosBusqueda($busqueda){
+public static function ctrListarProductosBusqueda($busqueda){
 
     $tabla="productos";
 
@@ -99,7 +98,7 @@ static public function ctrBuscarProductos($busqueda ,$ordenar ,$modo ,$base ,$to
 
 }
 
-
+/*
 static public function ctrActualizarVistaProducto($datos, $item){
 
     $tabla = "productos";

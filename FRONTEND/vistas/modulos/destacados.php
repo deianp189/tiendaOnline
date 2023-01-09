@@ -1,25 +1,48 @@
 <!--=====================================
 BANNER
 ======================================-->
+<?php 
 
-<figure class="banner">
+    $servidor = Ruta::ctrRutaBackend();
 
-    <img src="<?php echo $urlbackend ?>/vistas/img/banner/default.jpg" class="img-responsive" width="100%">
+    $ruta = "sin-categoria";
 
-    <div class="textoBanner textoDer">
+    $banner = ControladorProductos::ctrMostrarBanner($ruta);
 
-        <h1 style="color:#fff">OFERTAS ESPECIALES</h1>
-        <h2 style="color:#fff"><strong>50% off</strong></h2>
-        <h3 style="color:#fff">Termina el 31 de Octubre</h3>
+    $titulo1 = json_decode($banner["titulo1"],true);
+    $titulo2 = json_decode($banner["titulo2"],true);
+    $titulo3 = json_decode($banner["titulo3"],true);
 
-    </div>
+    if($banner != null){
 
-</figure>
+    echo '<figure class="banner">
+
+            <img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">	
+
+            <div class="textoBanner '.$banner["estilo"].'">
+                
+                <h1 style="color:'.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
+
+                <h2 style="color:'.$titulo2["color"].'"><strong>'.$titulo2["texto"].'</strong></h2>
+
+                <h3 style="color:'.$titulo3["color"].'">'.$titulo3["texto"].'</h3>
+
+            </div>
+
+        </figure>';
+
+    }
+
+?>
 
 <?php
 
     $titulosModulos=array("ARTÍCULOS GRATUITOS", "LO MÁS VENDIDO", "LO MÁS VISTO");
     $rutasModulos=array("articulos-gratis","lo-mas-vendido","lo-mas-visto");
+
+    $base = 0;
+    $tope = 4; //En este caso solo queremos que aparezcan 4 productos en inicio por cada tipo
+    $modo = "DESC";
 
     if($titulosModulos[0] == "ARTÍCULOS GRATUITOS" ){
 
@@ -27,7 +50,7 @@ BANNER
         $item="precio";
         $valor=0;
 
-        $gratis=ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor);
+        $gratis=ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base,$tope,$modo);
 
     // var_dump($gratis);
     }
@@ -38,7 +61,7 @@ BANNER
         $item=null;
         $valor=null;
     
-        $ventas=ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor);
+        $ventas=ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base,$tope,$modo);
     
        // var_dump($ventas);
     }
@@ -49,7 +72,7 @@ BANNER
         $item=null;
         $valor=null;
     
-        $vistas=ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor);
+        $vistas=ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base,$tope,$modo);
     
        // var_dump($ventas);
     }

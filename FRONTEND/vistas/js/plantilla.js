@@ -1,11 +1,20 @@
-/*Plantilla */
+// Herramienta TOOLTIP
+$('[data-toggle="tooltip"]').tooltip(); 
+
+
+/*=============================================
+PLANTILLA
+=============================================*/
+
+var rutaOculta = $("#rutaOculta").val();
 
 $.ajax({
 
-    url: "ajax/plantilla.ajax.php", 
+    url: rutaOculta+"ajax/plantilla.ajax.php",
+    
     success: function (respuesta) {
 
-        //console.log(JSON.parse(respuesta));
+       // console.log(JSON.parse(respuesta));
 
         var colorFondo = JSON.parse(respuesta).colorFondo;
         var colorTexto = JSON.parse(respuesta).colorTexto;
@@ -14,11 +23,18 @@ $.ajax({
 
         $(".backColor, .backColor a").css({ "background": colorFondo, "color": colorTexto })
         
+
         $(".barraSuperior, .barraSuperior a").css({"background":barraSuperior , "color":textoSuperior})
+       
+
 
     }
 
+
 })
+
+
+
 
 /*=============================================
 CUADRÍCULA O LISTA
@@ -53,3 +69,62 @@ for(var i = 0; i < btnList.length; i++){
 	})
 
 }
+
+
+/*=============================================
+EFECTOS CON EL SCROLL
+=============================================*/
+
+$(window).scroll(function(){
+
+	var scrollY = window.pageYOffset;
+
+	if(window.matchMedia("(min-width:768px)").matches){
+
+		if(scrollY < ($(".banner").offset().top)-150){
+
+			$(".banner img").css({"margin-top":-scrollY/3+"px"})
+
+		}else{
+
+			scrollY = 0;
+		}
+
+	}	
+	
+})
+
+$.scrollUp({
+
+	scrollText:"",
+	scrollSpeed: 2000,
+	easingType: "easeOutQuint"
+
+});
+
+
+/*=============================================
+ENLACES PAGINAGINACION
+=============================================*/
+
+var url = window.location.href;
+
+var indice = url.split("/");
+
+console.log("indice", indice);
+
+var pagActual = indice[6];
+console.log("pagActual", pagActual);
+
+if(isNaN(pagActual)){
+
+	$("#item1").addClass("active");
+
+}else{
+	
+	$("#item"+pagActual).addClass("active");	
+}
+
+
+
+

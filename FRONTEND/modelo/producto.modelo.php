@@ -67,20 +67,19 @@ class ModeloProductos{
 	MOSTRAR PRODUCTOS
 	=============================================*/
 
-    public static function mdlMostrarProductos($tabla,$ordenar,$item,$valor){
+    public static function mdlMostrarProductos($tabla,$ordenar,$item,$valor,$base,$tope,$modo){
 
         if($item !=null){
 
-            $stmt=Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item=:$item ORDER BY $ordenar DESC LIMIT 4 ");
+            $stmt=Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item=:$item ORDER BY $ordenar $modo LIMIT $base, $tope");
             $stmt ->bindParam(":".$item , $valor , PDO::PARAM_STR);
             $stmt->execute();
     
             return $stmt->fetchAll();
     
-    
         }else{
     
-            $stmt=Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT 4 ");         
+            $stmt=Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar $modo LIMIT $base, $tope ");         
             $stmt->execute();
     
             return $stmt->fetchAll();    
@@ -90,51 +89,38 @@ class ModeloProductos{
             $stmt =null;
     }
 
-/*
-    static public function mdlMostrarInfoProducto($tabla,$item ,$valor){
+    public static function mdlMostrarInfoProducto($tabla,$item,$valor){
 
         $stmt=Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item=:$item");
-
         $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-
         $stmt -> execute();
 
 		return $stmt -> fetch();
 
 		$stmt -> close();
-
 		$stmt = null;
-
-
     }
 
-
-    static public function mdlMostrarBanner($tabla,$ruta){
+    public static function mdlMostrarBanner($tabla,$ruta){
 
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE ruta = :ruta");
-
 		$stmt -> bindParam(":ruta", $ruta, PDO::PARAM_STR);
-
 		$stmt -> execute();
 
 		return $stmt -> fetch();
 
 		$stmt -> close();
-
 		$stmt = null;
-
-
     }
 
 
-    static public function mdlListarProductos($tabla, $ordenar, $item, $valor){
+    public static function mdlListarProductos($tabla, $ordenar, $item, $valor){
 
 
         if($item != null){
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY $ordenar DESC");
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-
 			$stmt -> execute();
 
 			return $stmt -> fetchAll();
@@ -142,7 +128,6 @@ class ModeloProductos{
 		}else{
 
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC");
-
 			$stmt -> execute();
 
 			return $stmt -> fetchAll();
@@ -150,40 +135,35 @@ class ModeloProductos{
 		}
 
 		$stmt -> close();
-
 		$stmt = null;
 
     }
 
 
-    static public function mdlBuscarProductos($tabla, $busqueda ,$ordenar ,$modo ,$base ,$tope){
-
+    public static function mdlBuscarProductos($tabla, $busqueda ,$ordenar ,$modo ,$base ,$tope){
+        //Aqui buscamos la coincidencia con las posibles tablas de la bbdd
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE ruta LIKE '%$busqueda%' OR titulo LIKE '%$busqueda%' OR titular LIKE '%$busqueda%' OR descripcion LIKE '%$busqueda%' ORDER BY $ordenar $modo LIMIT $base , $tope");
-
         $stmt -> execute();
 
 		return $stmt -> fetchAll();
 
 		$stmt -> close();
-
 		$stmt = null;
 
     }
 
-      static public function mdlListarProductosBusqueda($tabla, $busqueda){
+    public static function mdlListarProductosBusqueda($tabla, $busqueda){
 
         $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE ruta LIKE '%$busqueda%' OR titulo LIKE '%$busqueda%' OR titular LIKE '%$busqueda%' OR descripcion LIKE '%$busqueda%'");
-
         $stmt -> execute();
 
 		return $stmt -> fetchAll();
 
 		$stmt -> close();
-
 		$stmt = null;
 
     }
-
+/*
     static public function mdlActualizarVistaProducto($tabla, $datos, $item){
 
     $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item = :$item WHERE ruta = :ruta");
