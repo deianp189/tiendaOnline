@@ -6,14 +6,25 @@
             <!----------------Social------------------>
             <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social">
                 <ul>
-                    <li>
-                        <a href="" target="_blank"><i class="fa fa-facebook-f redSocial facebookBlanco" aria-hidden="true"></i></a>
-                    </li>
+                    <?php 
+                        $social=ControladorPlantilla::ctrEstiloPlantilla();
+
+                        $jsonRedesSociales = json_decode($social["redesSociales"],true);
+
+                            foreach ($jsonRedesSociales as $key => $value) {
+
+                                echo ' <li>
+                                    <a href="'.$value["url"].'" target="_blank"><i
+                                            class="fa '.$value["red"].' redSocial '.$value["estilo"].'" aria-hiden="true"></i></a>
+                                    </li>';
+            
+                            }
+                    ?>
                 </ul>
             </div>
 
             <!---------------Registro-------------------->
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 social registro">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 registro">
                 <ul>
                     <li><a href="#modalIngreso" data-toggle="modal">Iniciar sesión</a></li>
                     <li>|</li>
@@ -30,7 +41,11 @@
         <div class="row" id="cabecera">
             <!----------------Logotipo--------------------->
             <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
-                <a href="#"><img src="../img/plantilla/logo.png" alt="logotipo" class="img-responsive"></a>
+            <a href="<?php echo $url; ?>">
+
+                <img src="<?php echo $urlbackend; ?><?php echo $social["logo"];  ?>" class="img-responsive">
+
+            </a>
             </div>
             <!----------------Bloque categorias y buscador ------------------->
             <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
@@ -63,6 +78,58 @@
                 </a>
                 <p>Tu cesta <span class="cantidadCesta">3</span><br>€<span class="sumaCesta">20</span></p>
             </div>
+
         </div>
+
+
+        <!-------------Categorias--------------->
+        <div class="col-xs-12  backColor" id="categorias">
+
+            <?php
+            $item=null;
+            $valor=null;
+            
+            $categorias=ControladorProductos::ctrMostrarCategorias($item,$valor);
+            
+            //var_dump($categorias);
+
+            foreach ($categorias as $key => $value) {
+
+                echo '
+
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+
+                    <h4>
+                        <a href="'.$value["ruta"].'" class="pixelCategorias">'.$value["categoria"].'</a>
+                    </h4>
+
+                    <hr>
+
+                    <ul>';
+
+                    $item="id_categoria";
+                    $valor=$value["id"];
+
+
+                    $subcategorias=ControladorProductos::ctrMostrarSubCategorias($item,$valor);
+
+                    foreach ($subcategorias as $key => $value) {
+
+
+                        echo '<li><a href="'.$value["ruta"].'" class="pixelSubCategorias">'.$value["subcategoria"].'</a></li>';
+                    }
+
+
+                        echo '</ul>   
+
+                </div> ';
+                
+            
+            }
+            
+            ?>
+          
+        </div>
+
     </div>
 </header>
