@@ -19,18 +19,6 @@ a:visited, a:link, a:focus, a:hover, a:active{
     text-decoration: none;
 }
 
-#top ul {
-    padding-top: 8px;
-}
-
-#top ul li {
-    display: inline;
-    line-height: 30px;
-    margin: 0px 5px;
-    color: white;
-}
-
-
 .social ul li a i {
     font-size: 18px;
     margin: 0 1px;

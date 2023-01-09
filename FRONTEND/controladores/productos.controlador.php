@@ -35,28 +35,25 @@ public static function ctrMostrarSubCategorias($item,$valor){
      /*=============================================
 MOSTRAR PRODUCTOS
 =============================================*/
+
+public static function ctrMostrarProductos($ordenar, $item , $valor){
+
+    $tabla="productos";
+
+    $respuesta=ModeloProductos::mdlMostrarProductos($tabla , $ordenar, $item , $valor);
+
+    return $respuesta;
+}
+
+public static function ctrMostrarInfoProducto($item ,$valor){
+
+    $tabla="productos";
+
+    $respuesta=ModeloProductos::mdlMostrarInfoProducto($tabla,$item,$valor);
+
+    return $respuesta;
+}
 /*
-  static public function ctrMostrarProductos($ordenar, $item , $valor , $base ,$tope , $modo){
-
-    $tabla="productos";
-
-    $respuesta=ModeloProductos::mdlMostrarProductos($tabla , $ordenar, $item , $valor , $base ,$tope , $modo);
-
-    return $respuesta;
-
-
-}
-
-static public function ctrMostrarInfoProducto($item ,$valor){
-
-    $tabla="productos";
-
-    $respuesta=ModeloProductos::mdlMostrarInfoProducto($tabla,$item ,$valor);
-
-    return $respuesta;
-
-}
-
 static public function ctrMostrarBanner($ruta){
 
     $tabla="banner";
