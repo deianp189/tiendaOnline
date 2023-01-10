@@ -615,39 +615,25 @@ foreach ($productos as $key => $value) {
 
 							echo ' </ul>';
 
-
-
-
                             }
 
-
-                        
-
-
-
-
                         }else{
-
 
                                 echo '<ul class="pagination">';
 
                                 for($i=1 ; $i<=$pagProductos ; $i++){
 
-                                echo '<li><a href="'.$url.$rutas[0].'/'.$i.'/'.$rutas[2].'/'.$rutas[3].'">'.$i.'</a></li>';
+                                    echo '<li><a href="'.$url.$rutas[0].'/'.$i.'/'.$rutas[2].'/'.$rutas[3].'">'.$i.'</a></li>';
 
                                 }
 
                                 echo ' </ul>';
 
-
                             }
-
-
 
                         }
 
         ?>
-
             </center>
 
         </div>

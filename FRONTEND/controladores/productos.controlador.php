@@ -98,8 +98,8 @@ public static function ctrListarProductosBusqueda($busqueda){
 
 }
 
-/*
-static public function ctrActualizarVistaProducto($datos, $item){
+
+public static function ctrActualizarVistaProducto($datos, $item){
 
     $tabla = "productos";
 
@@ -107,9 +107,8 @@ static public function ctrActualizarVistaProducto($datos, $item){
 
     return $respuesta;
 
-
 }
-*/
+
 }
 
 ?>

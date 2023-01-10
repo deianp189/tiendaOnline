@@ -33,11 +33,15 @@
 
     
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/flexslider.css">
+
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/cabecera.css">
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/slide.css">
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/productos.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/infoproducto.css">
     
     <link rel="stylesheet" href="vistas/css/plugins/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
@@ -45,7 +49,9 @@
 
     <script src="<?php echo $url; ?>vistas/js/plugins/jquery.min.js"></script>
     <script src="<?php echo $url; ?>vistas/js/plugins/bootstrap.min.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/jquery.easing.js"></script>
     <script src="<?php echo $url; ?>vistas/js/plugins/scrollUp.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
 </head>
 <body>
     <!--------------------------- Cabecera ------------------------------>
@@ -138,6 +144,7 @@ CONTENIDO DINÁMICO
     <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
     <script src="<?php echo $url; ?>vistas/js/slide.js"></script>
     <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/infoproducto.js"></script>
     
 </body>
 </html>

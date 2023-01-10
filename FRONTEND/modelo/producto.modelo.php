@@ -163,8 +163,8 @@ class ModeloProductos{
 		$stmt = null;
 
     }
-/*
-    static public function mdlActualizarVistaProducto($tabla, $datos, $item){
+
+    public static function mdlActualizarVistaProducto($tabla, $datos, $item){
 
     $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item = :$item WHERE ruta = :ruta");
 
@@ -182,12 +182,10 @@ class ModeloProductos{
 		}
 
 		$stmt -> close();
-
 		$stmt = null;
 
     }
 
-*/
 }
 
 ?>
