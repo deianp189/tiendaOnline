@@ -587,9 +587,9 @@ foreach ($productos as $key => $value) {
 
                 <?php 
 
-                    if(count($listaProductos) !=0){
+                    if(count((array)$listaProductos) !=0){
 
-                        $pagProductos = ceil(count($listaProductos)/12);
+                        $pagProductos = ceil(count((array)$listaProductos)/12);
 
                         // echo $pagProductos;
 

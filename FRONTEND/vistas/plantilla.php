@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/flexslider.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
 
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plantilla.css">
     <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/cabecera.css">
@@ -52,6 +53,7 @@
     <script src="<?php echo $url; ?>vistas/js/plugins/jquery.easing.js"></script>
     <script src="<?php echo $url; ?>vistas/js/plugins/scrollUp.js"></script>
     <script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/plugins/sweetalert.min.js"></script>
 </head>
 <body>
     <!--------------------------- Cabecera ------------------------------>
@@ -119,9 +121,10 @@ CONTENIDO DINÁMICO
 
             include "modulos/infoproducto.php";
     
-        }else if($rutas[0] == "buscador"){
+        }else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir" || $rutas[0] == "perfil" ){
 
-            include "modulos/buscador.php";
+            //include "modulos/buscador.php";
+            include "modulos/".$rutas[0].".php";
             
         }else{
         
@@ -145,6 +148,7 @@ CONTENIDO DINÁMICO
     <script src="<?php echo $url; ?>vistas/js/slide.js"></script>
     <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
     <script src="<?php echo $url; ?>vistas/js/infoproducto.js"></script>
+    <script src="<?php echo $url; ?>vistas/js/usuarios.js"></script>
     
 </body>
 </html>

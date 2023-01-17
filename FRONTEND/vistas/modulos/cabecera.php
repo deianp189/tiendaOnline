@@ -1,3 +1,28 @@
+<?php 
+
+$servidor = Ruta::ctrRutaBackend();
+$url = Ruta::ctrRuta();
+
+/*=============================================
+INICIO DE SESIÓN USUARIO
+=============================================*/
+
+if(isset($_SESSION["validarSesion"])){
+
+	if($_SESSION["validarSesion"] == "ok"){
+
+		echo '<script>
+		
+			localStorage.setItem("usuario","'.$_SESSION["id"].'");
+
+		</script>';
+
+	}
+
+}
+
+?>
+
 <!----------------------- Parte superior --------------------->
 
 <div class="container-fluid barraSuperior" id="top">
@@ -135,3 +160,291 @@
 
     </div>
 </header>
+
+<!--=====================================
+		VENTANA MODAL REGISTRO
+======================================-->
+
+            <div class="modal fade modalFormulario" id="modalRegistro" role="dialog">
+
+                <div class="modal-content modal-dialog">
+
+                    <div class="modal-body modalTitulo">
+
+                            <h3 class="backColor">REGISTRARSE</h3>
+
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                <!-- REGISTRO FACEBOOK -->
+
+                                <div class="col-sm-6 col-xs-12 facebook">
+
+                                    <p>
+                                        <i class="fa fa-facebook"></i>
+                                            Registro con Facebook
+                                    </p>
+                                    
+                                </div>
+
+                                <!--REGISTRO DE USUARIO EN LA PAGINA-->
+
+                                <form method="post" onsubmit="return registroUsuario()">
+                                    
+                                    <hr>
+                                    
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                
+                                                <i class="glyphicon glyphicon-user"></i>
+
+                                            </span>
+
+                                            <input type="text" class="form-control text-uppercase" id="regUsuario" name="regUsuario"
+                                            placeholder="Nombre Completo" required>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                
+                                                <i class="glyphicon glyphicon-envelope"></i>
+
+                                            </span>
+
+                                            <input type="email" class="form-control" id="regEmail" name="regEmail"
+                                            placeholder="Correo" required>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                
+                                                <i class="glyphicon glyphicon-lock"></i>
+
+                                            </span>
+
+                                            <input type="password" class="form-control" id="regPassword" name="regPassword"
+                                            placeholder="Contraseña" required>
+
+                                        </div>
+                                    
+                                    </div>
+
+
+                                    <!--Recibimos los parametros y lo enviamos a php-->
+                                    <?php 
+
+                                        $registro = new ControladorUsuarios();
+                                        $registro->ctrRegistroUsuario();
+                                    
+                                    ?>
+
+                                    <input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+                                </form>
+
+                            </div>   
+
+
+                        <div class="modal-footer">
+                            ¿Ya tienes una cuenta? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+<!--=====================================
+VENTANA MODAL PARA EL INGRESO
+======================================-->
+
+<div class="modal fade modalFormulario" id="modalIngreso" role="dialog">
+
+    <div class="modal-content modal-dialog">
+
+        <div class="modal-body modalTitulo">
+
+            <h3 class="backColor">INGRESAR</h3>
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <!--=====================================
+			INGRESO FACEBOOK
+			======================================-->
+
+            <div class="col-sm-6 col-xs-12 facebook">
+
+                <p>
+                    <i class="fa fa-facebook"></i>
+                    Ingreso con Facebook
+                </p>
+
+            </div>
+
+            <!--=====================================
+			INGRESO GOOGLE
+			======================================-->
+            <a href="<?php echo $rutaGoogle; ?>">
+
+                <div class="col-sm-6 col-xs-12 google">
+
+                    <p>
+                        <i class="fa fa-google"></i>
+                        Ingreso con Google
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!--=====================================
+			INGRESO DIRECTO
+			======================================-->
+            <form method="post">
+
+                <hr>
+
+                <div class="form-group">
+
+                    <div class="input-group">
+
+                        <span class="input-group-addon">
+
+                            <i class="glyphicon glyphicon-envelope"></i>
+
+                        </span>
+
+                        <input type="email" class="form-control" id="ingEmail" name="ingEmail"
+                            placeholder="Correo Electrónico" required>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <div class="input-group">
+
+                        <span class="input-group-addon">
+
+                            <i class="glyphicon glyphicon-lock"></i>
+
+                        </span>
+
+                        <input type="password" class="form-control" id="ingPassword" name="ingPassword"
+                            placeholder="Contraseña" required>
+
+                    </div>
+
+                </div>
+
+                <?php
+
+					$ingreso = new ControladorUsuarios();
+					$ingreso -> ctrIngresoUsuario();
+
+				?>
+
+                <input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">
+
+                <br>
+
+                <center>
+
+                    <a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
+
+                </center>
+
+            </form>
+
+        </div>
+
+        <div class="modal-footer">
+
+            ¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal"
+                    data-toggle="modal">Registrarse</a></strong>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+<!--=====================================
+VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
+======================================-->
+
+<div class="modal fade modalFormulario" id="modalPassword" role="dialog">
+
+    <div class="modal-content modal-dialog">
+
+        <div class="modal-body modalTitulo">
+
+            <h3 class="backColor">SOLICITUD DE NUEVA CONTRASEÑA</h3>
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <!--=====================================
+			OLVIDO CONTRASEÑA
+			======================================-->
+            <form method="post">
+
+                <label class="text-muted">Escribe el correo electrónico con el que estás registrado y allí te enviaremos
+                    una nueva contraseña:</label>
+
+                <div class="form-group">
+
+                    <div class="input-group">
+
+                        <span class="input-group-addon">
+
+                            <i class="glyphicon glyphicon-envelope"></i>
+
+                        </span>
+
+                        <input type="email" class="form-control" id="passEmail" name="passEmail"
+                            placeholder="Correo Electrónico" required>
+
+                    </div>
+
+                </div>
+
+                <?php
+
+					$password = new ControladorUsuarios();
+					$password -> ctrOlvidoPassword();
+
+				?>
+
+                <input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+
+            </form>
+
+
+
+        </div>
+
+        <div class="modal-footer">
+
+            ¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal"
+                    data-toggle="modal">Registrarse</a></strong>
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+

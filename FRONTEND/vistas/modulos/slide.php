@@ -60,7 +60,7 @@ SLIDESHOW
         <ol id="paginacion">
 
             <?php
-				for($i = 1; $i <= count($slide); $i++){
+				for($i = 1; $i <= count((array)$slide); $i++){
 
 					echo '<li item="'.$i.'"><span class="fa fa-circle"></span></li>';
 				}		

@@ -62,7 +62,7 @@ INFOPRODUCTOS
 
                         if($multimendia !=null){
 
-                            for($i=0 ; $i<count($multimendia) ; $i++){
+                            for($i=0 ; $i<count((array)$multimendia) ; $i++){
 
                                 echo '<img id="lupa'.($i+1).'" class="img-thumbnail"
                                 src="'.$servidor.$multimendia[$i]["foto"].'">';
@@ -81,7 +81,7 @@ INFOPRODUCTOS
 
                 <ul class="slides">';
 
-                      for($i=0 ; $i<count($multimendia) ; $i++){
+                      for($i=0 ; $i<count((array)$multimendia) ; $i++){        //count((array)$variable)
 
                         echo '<li>
                                 <img value="'.($i+1).'" class="img-thumbnail"
@@ -366,7 +366,7 @@ INFOPRODUCTOS
                             <option value="">Talla</option>';
 
 
-                            for($i=0; $i<=count($detalles["talla"]); $i++){
+                            for($i=0; $i<=count((array)$detalles["talla"]); $i++){
 
 
                                 echo '<option value="'.$detalles["Talla"][$i].'">'.$detalles["Talla"][$i].'</option>';
@@ -389,7 +389,7 @@ INFOPRODUCTOS
 										
 										<option value="">Color</option>';
 
-										for($i = 0; $i <= count($detalles["Color"]); $i++){
+										for($i = 0; $i <= count((array)$detalles["Color"]); $i++){
 
 											echo '<option value="'.$detalles["Color"][$i].'">'.$detalles["Color"][$i].'</option>';
 
@@ -410,7 +410,7 @@ INFOPRODUCTOS
 										
 										<option value="">Marca</option>';
 
-										for($i = 0; $i <= count($detalles["Marca"]); $i++){
+										for($i = 0; $i <= count((array)$detalles["Marca"]); $i++){
 
 											echo '<option value="'.$detalles["Marca"][$i].'">'.$detalles["Marca"][$i].'</option>';
 
