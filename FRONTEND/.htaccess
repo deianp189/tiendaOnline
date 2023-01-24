@@ -1,9 +1,0 @@
-# Impedir que se pueda ver las carpetas internas de nuestro proyecto
-
-Options All -Indexes
-
-# Url Amigables
-
-RewriteEngine On
-
-RewriteRule ^([-a-zA-Z0-9ñÑ_/]+)$ index.php?ruta=$1
