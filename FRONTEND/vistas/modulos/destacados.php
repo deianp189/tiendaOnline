@@ -35,24 +35,24 @@ echo '<figure class="banner">
 }
 
 
-$titulosModulos = array("ARTÍCULOS GRATUITOS", "LO MÁS VENDIDO", "LO MÁS VISTO");
-$rutaModulos = array("articulos-gratis","lo-mas-vendido","lo-mas-visto");
+$titulosModulos = array("LO MÁS VENDIDO", "LO MÁS VISTO");
+$rutaModulos = array("lo-mas-vendido","lo-mas-visto");
 
 $base = 0;
 $tope = 4;
 
-if($titulosModulos[0] == "ARTÍCULOS GRATUITOS"){
+// if($titulosModulos[0] == "ARTÍCULOS GRATUITOS"){
 
-$ordenar = "id";
-$item = "precio";
-$valor = 0;
-$modo = "DESC";
+// $ordenar = "id";
+// $item = "precio";
+// $valor = 0;
+// $modo = "DESC";
 
-$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
+// $gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
-}
+// }
 
-if($titulosModulos[1] == "LO MÁS VENDIDO"){
+if($titulosModulos[0] == "LO MÁS VENDIDO"){
 
 $ordenar = "ventas";
 $item = null;
@@ -63,7 +63,7 @@ $ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $ba
 
 }
 
-if($titulosModulos[2] == "LO MÁS VISTO"){
+if($titulosModulos[1] == "LO MÁS VISTO"){
 
 $ordenar = "vistas";
 $item = null;
@@ -74,7 +74,7 @@ $vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $ba
 
 }
 
-$modulos = array($gratis, $ventas, $vistas);
+$modulos = array($ventas, $vistas);
 
 for($i = 0; $i < count($titulosModulos); $i ++){
 
@@ -197,11 +197,11 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 							<div class="col-xs-6 precio">';
 
-							if($value["precio"] == 0){
+							// if($value["precio"] == 0){
 
-								echo '<h2><small>GRATIS</small></h2>';
+							// 	echo '<h2><small>GRATIS</small></h2>';
 
-							}else{
+							// }else{
 
 								if($value["oferta"] != 0){
 
@@ -223,7 +223,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 								}
 								
-							}
+							//}
 											
 							echo '</div>
 
@@ -328,11 +328,11 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 							<p class="text-muted">'.$value["titular"].'</p>';
 
-							if($value["precio"] == 0){
+							// if($value["precio"] == 0){
 
-								echo '<h2><small>GRATIS</small></h2>';
+							// 	echo '<h2><small>GRATIS</small></h2>';
 
-							}else{
+							// }else{
 
 								if($value["oferta"] != 0){
 
@@ -354,7 +354,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 								}
 								
-							}
+							//}
 
 							echo '<div class="btn-group pull-left enlaces">
 						  	

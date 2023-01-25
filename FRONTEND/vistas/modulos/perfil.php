@@ -68,11 +68,6 @@ SECCIÓN PERFIL
 	  			<a data-toggle="tab" href="#perfil">
 	  			<i class="fa fa-user"></i> EDITAR PERFIL</a>
 	  		</li>
-
-	  		<li>				
-		 	 	<a href="<?php echo $url; ?>ofertas">
-		 	 	<i class="fa fa-star"></i>	VER OFERTAS</a>
-	  		</li>
 		
 		</ul>
 

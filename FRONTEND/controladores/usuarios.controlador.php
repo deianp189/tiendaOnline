@@ -37,43 +37,34 @@ class ControladorUsuarios{
 					VERIFICACIÓN CORREO ELECTRÓNICO
 					=============================================*/
 
-					date_default_timezone_set("America/Bogota");
+					date_default_timezone_set("Europe/Madrid");
 
 					$url = Ruta::ctrRuta();	
 
-					$mail = new PHPMailer;
-
+					$mail = new PHPMailer();
+					$mail->isSMTP();
+					$mail->Host = 'smtp.mailtrap.io';
+					$mail->SMTPAuth = true;
+					$mail->Port = 2525;
+					$mail->Username = '298037d288d2af';
+					$mail->Password = '9de1f638640962';
 					$mail->CharSet = 'UTF-8';
-
-					$mail->isMail();
-
-					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
-
-					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
-
+					$mail->setFrom('casari@gmail.com', 'CASARI');
+					$mail->addReplyTo('casari@gmail.com', 'CASARI');
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
-
 					$mail->addAddress($_POST["regEmail"]);
-
 					$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 						
-						<center>
-							
-							<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
-
-						</center>
 
 						<div style="position:relative; margin:auto; width:600px; background:white; padding:20px">
 						
 							<center>
-							
-							<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
 
 							<h3 style="font-weight:100; color:#999">VERIFIQUE SU DIRECCIÓN DE CORREO ELECTRÓNICO</h3>
 
 							<hr style="border:1px solid #ccc; width:80%">
 
-							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de Tienda Virtual, debe confirmar su dirección de correo electrónico</h4>
+							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de Casari, debe confirmar su dirección de correo electrónico</h4>
 
 							<a href="'.$url.'verificar/'.$encriptarEmail.'" target="_blank" style="text-decoration:none">
 
@@ -314,26 +305,25 @@ class ControladorUsuarios{
 
 			if(preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["passEmail"])){
 
-				/*=============================================
-				GENERAR CONTRASEÑA ALEATORIA
-				=============================================*/
+                        /*=============================================
+                        GENERAR CONTRASEÑA ALEATORIA
+                        =============================================*/
 
-				function generarPassword($longitud){
+                function generarPassword($longitud){
 
-					$key = "";
-					$pattern = "1234567890abcdefghijklmnopqrstuvwxyz";
+                    $key = "";
+                    $pattern = "1234567890abcdefghijklmnopqrstuvwxyz";
 
-					$max = strlen($pattern)-1;
+                    $max = strlen($pattern)-1;
+                    //Rellena la contraseña random de tamaño longitud
+                    for($i = 0; $i < $longitud; $i++){
 
-					for($i = 0; $i < $longitud; $i++){
+                        $key .= $pattern[mt_rand(0,$max)];
 
-						$key .= $pattern{mt_rand(0,$max)};
+                    }
 
-					}
-
-					return $key;
-
-				}
+                    return $key;
+                }
 
 				$nuevaPassword = generarPassword(11);
 
@@ -360,37 +350,29 @@ class ControladorUsuarios{
 						CAMBIO DE CONTRASEÑA
 						=============================================*/
 
-						date_default_timezone_set("America/Bogota");
+						date_default_timezone_set("Europe/Madrid");
 
 						$url = Ruta::ctrRuta();	
 
-						$mail = new PHPMailer;
-
+						$mail = new PHPMailer();
+						$mail->isSMTP();
+						$mail->Host = 'smtp.mailtrap.io';
+						$mail->SMTPAuth = true;
+						$mail->Port = 2525;
+						$mail->Username = '298037d288d2af';
+						$mail->Password = '9de1f638640962';
 						$mail->CharSet = 'UTF-8';
-
-						$mail->isMail();
-
-						$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
-
-						$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
-
+						$mail->setFrom('casari@gmail.com', 'CASARI');
+						$mail->addReplyTo('casari@gmail.com', 'CASARI');
 						$mail->Subject = "Solicitud de nueva contraseña";
-
 						$mail->addAddress($_POST["passEmail"]);
-
 						$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 	
-								<center>
-									
-									<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
-
-								</center>
 
 								<div style="position:relative; margin:auto; width:600px; background:white; padding:20px">
 								
 									<center>
-									
-									<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-pass.png">
+								
 
 									<h3 style="font-weight:100; color:#999">SOLICITUD DE NUEVA CONTRASEÑA</h3>
 
@@ -979,35 +961,31 @@ class ControladorUsuarios{
 				ENVÍO CORREO ELECTRÓNICO
 				=============================================*/
 
-					date_default_timezone_set("America/Bogota");
+					date_default_timezone_set("Europe/Madrid");
 
 					$url = Ruta::ctrRuta();	
 
-					$mail = new PHPMailer;
-
+					$mail = new PHPMailer();
+					$mail->isSMTP();
+					$mail->Host = 'smtp.mailtrap.io';
+					$mail->SMTPAuth = true;
+					$mail->Port = 2525;
+					$mail->Username = '298037d288d2af';
+					$mail->Password = '9de1f638640962';
 					$mail->CharSet = 'UTF-8';
-
-					$mail->isMail();
-
-					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
-
-					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
-
+					$mail->setFrom('casari@gmail.com', 'CASARI');
+					$mail->addReplyTo('casari@gmail.com', 'CASARI');
 					$mail->Subject = "Ha recibido una consulta";
-
 					$mail->addAddress("contacto@tiendaenlinea.com");
-
 					$mail->msgHTML('
 
 						<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 
-						<center><img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png"></center>
+						
 
 						<div style="position:relative; margin:auto; width:600px; background:white; padding-bottom:20px">
 
 							<center>
-
-							<img style="padding-top:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
 
 
 							<h3 style="font-weight:100; color:#999;">HA RECIBIDO UNA CONSULTA</h3>

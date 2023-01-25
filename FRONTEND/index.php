@@ -22,7 +22,7 @@ require_once "extensiones/vendor/autoload.php";
 
 // Desactivar toda las notificaciónes del PHP
 
-//error_reporting(0);
+error_reporting(0);
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> plantilla();
