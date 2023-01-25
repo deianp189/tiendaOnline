@@ -67,18 +67,18 @@ FOOTER
 				
 				<h5>
 					
-					<i class="fa fa-phone-square" aria-hidden="true"></i> (555) 555-55-55
+					<i class="fa fa-phone-square" aria-hidden="true"></i> (numero de contacto)
 
 					<br><br>
 
-					<i class="fa fa-envelope" aria-hidden="true"></i> soporte@tiendavirtual.com
+					<i class="fa fa-envelope" aria-hidden="true"></i> casari@gmail.com
 
 					<br><br>
 
 					<i class="fa fa-map-marker" aria-hidden="true"></i> Calle 45F 82 - 31 Local 102
 
 					<br><br>
-					Medellín | Colombia
+					Granada
 
 				</h5>
 
