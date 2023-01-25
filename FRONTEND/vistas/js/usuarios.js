@@ -399,8 +399,8 @@ $(".deseos").click(function(){
 	if(idUsuario == null){
 
 		swal({
-		  title: "Debe ingresar al sistema",
-		  text: "¡Para agregar un producto a la 'lista de deseos' debe primero ingresar al sistema!",
+		  title: "Debe iniciar sesión",
+		  text: "¡Para agregar un producto a la lista de deseos primero debe inicar sesión!",
 		  type: "warning",
 		  confirmButtonText: "¡Cerrar!",
 		  closeOnConfirm: false

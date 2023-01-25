@@ -119,7 +119,7 @@ TABLA CARRITO DE COMPRAS
 
 						<br>
 
-						<p class="precioCarritoCompra text-center">USD $<span>10</span></p>
+						<p class="precioCarritoCompra text-center"> € <span>10</span></p>
 
 					</div>
 
@@ -145,7 +145,7 @@ TABLA CARRITO DE COMPRAS
 
 						<p>
 							
-							<strong>USD $<span>10</span></strong>
+							<strong> € <span>10</span></strong>
 
 						</p>
 
@@ -199,7 +199,7 @@ TABLA CARRITO DE COMPRAS
 
 						<br>
 
-						<p class="precioCarritoCompra text-center">USD $<span>11</span></p>
+						<p class="precioCarritoCompra text-center"> € <span>11</span></p>
 
 					</div>
 
@@ -225,7 +225,7 @@ TABLA CARRITO DE COMPRAS
 
 						<p>
 							
-							<strong>USD $<span>11</span></strong>
+							<strong> € <span>11</span></strong>
 
 						</p>
 
@@ -257,7 +257,7 @@ TABLA CARRITO DE COMPRAS
 
 						<h4 class="sumaSubTotal">
 							
-							<strong>USD $<span>21</span></strong>
+							<strong> € <span>21</span></strong>
 
 						</h4>
 
