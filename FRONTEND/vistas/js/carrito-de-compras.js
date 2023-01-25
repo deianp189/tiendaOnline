@@ -612,7 +612,7 @@ $("#btnCheckout").click(function(){
 		$(".listaProductos table.tablaProductos tbody").append('<tr>'+
 															   '<td class="valorTitulo">'+tituloArray+'</td>'+
 															   '<td class="valorCantidad">'+cantidadArray+'</td>'+
-															   '<td>$<span class="valorItem" valor="'+subtotalArray+'">'+subtotalArray+'</span></td>'+
+															   '<td><span class="valorItem" valor="'+subtotalArray+'">'+subtotalArray+'</span> €</td>'+
 															   '<tr>');
 
 		/*=============================================

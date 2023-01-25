@@ -289,8 +289,6 @@ VENTANA MODAL PARA CHECKOUT
 
 						 <tbody>
 						 	
-
-
 						 </tbody>
 
 					</table>
