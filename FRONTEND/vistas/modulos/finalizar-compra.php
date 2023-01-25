@@ -103,9 +103,9 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
    }
 
 /*=============================================
- PAGO PAYU
+ PAGO PAYU prescindible
 =============================================*/
-
+/*
 }else if(isset( $_GET['payu']) && $_GET['payu'] === 'true'){ 
 
    $respuesta = ControladorCarrito::ctrMostrarTarifas();
@@ -203,10 +203,10 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 
    }
 
-}
+}*/
 
 /*=============================================
-ADQUISICIONES GRATUITAS
+ADQUISICIONES GRATUITAS prescindible
 =============================================*/
 else if(isset( $_GET['gratis']) && $_GET['gratis'] === 'true'){
 

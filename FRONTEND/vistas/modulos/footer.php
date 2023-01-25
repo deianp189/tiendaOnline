@@ -75,7 +75,7 @@ FOOTER
 
 					<br><br>
 
-					<i class="fa fa-map-marker" aria-hidden="true"></i> Calle 45F 82 - 31 Local 102
+					<i class="fa fa-map-marker" aria-hidden="true"></i> Dirección
 
 					<br><br>
 					Granada
@@ -140,7 +140,7 @@ FINAL
 			
 			<div class="col-sm-6 col-xs-12 text-left text-muted">
 				
-				<h5>&copy; 2017 Todos los derechos reservados. Sitio elaborado por la Compañía</h5>
+				<h5>&copy; 2023 Todos los derechos reservados.</h5>
 
 			</div>
 

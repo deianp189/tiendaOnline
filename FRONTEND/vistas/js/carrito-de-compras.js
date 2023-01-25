@@ -575,8 +575,8 @@ $("#btnCheckout").click(function(){
 
 	var impuestoTotal = ($(".valorSubtotal").html() * $("#tasaImpuesto").val()) /100;
 	
-	$(".valorTotalImpuesto").html((impuestoTotal).toFixed(2));
-	$(".valorTotalImpuesto").attr("valor",(impuestoTotal).toFixed(2));
+	//$(".valorTotalImpuesto").html((impuestoTotal).toFixed(2));
+	//$(".valorTotalImpuesto").attr("valor",(impuestoTotal).toFixed(2));
 
 	sumaTotalCompra()
 

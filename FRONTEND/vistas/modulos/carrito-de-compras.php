@@ -182,16 +182,75 @@ VENTANA MODAL PARA CHECKOUT
 					
 					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
-					<div class="col-xs-12 seleccionePais">
+					<div class="col-xs-12">
 						
+					<div class="form-group">
+					
+						<div class="input-group">
+							
+							<span class="input-group-addon">
+								
+								Dirección
+							
+							</span>
+
+							<input type="text" class="form-control" placeholder="Calle, Portal, Puerta" required>
+
+						</div>
+
+					</div>
+
+					<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							Provincia
+						
+						</span>
+
+						<input type="text" class="form-control" required>	
+
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="input-group">
+							
+							<span class="input-group-addon">
+								
+								C. Postal
+							
+							</span>
+
+							<input type="text" class="form-control" required>	
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+								
+								<span class="input-group-addon">
+									
+									Télefono
+								
+								</span>
+
+								<input type="text" class="form-control" placeholder="Opcional">	
+
+							</div>
+					</div>
+
 						
 
 					</div>
 
 				</div>
 
-				<br>
-
+				<!-- <br>
+ 
 				<div class="formaPago row">
 					
 					<h4 class="text-center well text-muted text-uppercase">Elige la forma de pago</h4>
@@ -208,25 +267,13 @@ VENTANA MODAL PARA CHECKOUT
 
 					</figure>
 
-					<figure class="col-xs-6">
-						
-						<center>
-							
-							<input id="checkPayu" type="radio" name="pago" value="payu">
+				</div> 
 
-						</center>
-
-						<img src="<?php echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail">
-
-					</figure>
-
-				</div>
-
-				<br>
+				<br> -->
 
 				<div class="listaProductos row">
 					
-					<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
+					<h4 class="text-center well text-muted text-uppercase">Resumen de Compra</h4>
 
 					<table class="table table-striped tablaProductos">
 						
@@ -256,65 +303,33 @@ VENTANA MODAL PARA CHECKOUT
 								
 								<tr>
 									<td>Subtotal</td>	
-									<td><span class="cambioDivisa">EUR</span> €<span class="valorSubtotal" valor="0">0</span></td>	
+									<td><span class="cambioDivisa"></span> <span class="valorSubtotal" valor="0">0</span> €</td>	
 								</tr>
 
 								<tr>
 									<td>Envío</td>	
-									<td><span class="cambioDivisa">EUR</span> €<span class="valorTotalEnvio" valor="0">0</span></td>	
+									<td><span class="cambioDivisa"></span><span class="valorTotalEnvio" valor="0">0</span> €</td>	
 								</tr>
 
 								<tr>
 									<td>Impuesto</td>	
-									<td><span class="cambioDivisa">EUR</span> €<span class="valorTotalImpuesto" valor="0">0</span></td>	
+									<td><span class="cambioDivisa"></span><span class="valorTotalImpuesto" valor="0">0</span> €</td>	
 								</tr>
 
 								<tr>
 									<td><strong>Total</strong></td>	
-									<td><strong><span class="cambioDivisa">EUR</span> €<span class="valorTotalCompra" valor="0">0</span></strong></td>	
+									<td><strong><span class="cambioDivisa"></span><span class="valorTotalCompra" valor="0">0</span> €</strong></td>	
 								</tr>
 
 							</tbody>	
 
 						</table>
 
-						 <div class="divisa">
-
-						 	<select class="form-control" id="cambiarDivisa" name="divisa">
-						 		
-							
-
-						 	</select>	
-
-						 	<br>
-
-						 </div>
-
 					</div>
 
 					<div class="clearfix"></div>
 
-					<form class="formPayu" style="display:none">
-					 
-						<input name="merchantId" type="hidden" value=""/>
-						<input name="accountId" type="hidden" value=""/>
-						<input name="description" type="hidden" value=""/>
-						<input name="referenceCode" type="hidden" value=""/>	
-						<input name="amount" type="hidden" value=""/>
-						<input name="tax" type="hidden" value=""/>
-						<input name="taxReturnBase" type="hidden" value=""/>
-						<input name="shipmentValue" type="hidden" value=""/>
-						<input name="currency" type="hidden" value=""/>
-						<input name="lng" type="hidden" value="es"/>
-						<input name="confirmationUrl" type="hidden" value="" />
-						<input name="responseUrl" type="hidden" value=""/>
-						<input name="declinedResponseUrl" type="hidden" value=""/>
-						<input name="displayShippingInformation" type="hidden" value=""/>
-						<input name="test" type="hidden" value="" />
-						<input name="signature" type="hidden" value=""/>
 
-					  <input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit"  value="PAGAR" >
-					</form>
 					
 					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
 
