@@ -671,7 +671,7 @@ SECCIÓN PERFIL
 								<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-										<input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
+										<input type="password" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
 
 									</div>
 

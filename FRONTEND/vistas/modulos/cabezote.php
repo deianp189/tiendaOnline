@@ -423,7 +423,7 @@ VENTANA MODAL PARA EL REGISTRO
 						
 						</span>
 
-						<input type="text" class="form-control text-uppercase" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
+						<input type="text" class="form-control" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
 
 					</div>
 
