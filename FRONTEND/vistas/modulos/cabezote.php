@@ -423,7 +423,7 @@ VENTANA MODAL PARA EL REGISTRO
 						
 						</span>
 
-						<input type="text" class="form-control" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
+						<input type="text" class="form-control" id="regUsuario" name="regUsuario" placeholder="Usuario" required>
 
 					</div>
 
@@ -449,15 +449,26 @@ VENTANA MODAL PARA EL REGISTRO
 					
 					<div class="input-group">
 						
-						<span class="input-group-addon">
+						<span class="input-group-addon" onclick="mostrarReg()">
 							
-							<i class="glyphicon glyphicon-lock"></i>
+							<i  class="glyphicon glyphicon-eye-open"></i>
 						
 						</span>
-
 						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
-
 					</div>
+				
+					<script type="text/javascript">
+						function mostrarReg(){
+							var tipo = document.getElementById("regPassword");
+
+							if (tipo.type == 'password') {
+
+								tipo.type = 'text';
+							}else{
+								tipo.type = 'password'
+							}
+        				}
+    				</script>
 
 				</div>
 
@@ -579,9 +590,9 @@ VENTANA MODAL PARA EL INGRESO
 					
 					<div class="input-group">
 						
-						<span class="input-group-addon">
+						<span class="input-group-addon" onclick="mostrarIng()">
 							
-							<i class="glyphicon glyphicon-lock"></i>
+							<i class="glyphicon glyphicon-eye-open"></i>
 						
 						</span>
 
@@ -590,6 +601,19 @@ VENTANA MODAL PARA EL INGRESO
 					</div>
 
 				</div>
+
+				<script type="text/javascript">
+						function mostrarIng(){
+							var tipo = document.getElementById("ingPassword");
+
+							if (tipo.type == 'password') {
+
+								tipo.type = 'text';
+							}else{
+								tipo.type = 'password'
+							}
+        				}
+    				</script>
 
 				
 

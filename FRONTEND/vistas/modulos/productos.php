@@ -59,7 +59,7 @@ BARRA PRODUCTOS
 
 					  <?php
 					  	
-						echo '<li><a href="'.$url.$rutas[0].'/1/recientes">Más reciente</a></li>
+						echo '<li><a href="'.$url.$rutas[0].'/1/recientes"GRID>Más reciente</a></li>
 							  <li><a href="'.$url.$rutas[0].'/1/antiguos">Más antiguo</a></li>';
 
 						?>
@@ -78,7 +78,7 @@ BARRA PRODUCTOS
 					 	
 						<i class="fa fa-th" aria-hidden="true"></i>  
 
-						<span class="col-xs-0 pull-right"> GRID</span>
+						<span class="col-xs-0 pull-right"> CUAD</span>
 
 					 </button>
 
@@ -86,7 +86,7 @@ BARRA PRODUCTOS
 					 	
 						<i class="fa fa-list" aria-hidden="true"></i> 
 
-						<span class="col-xs-0 pull-right"> LIST</span>
+						<span class="col-xs-0 pull-right"> LISTA</span>
 
 					 </button>
 					

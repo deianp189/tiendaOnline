@@ -214,7 +214,7 @@ class ControladorUsuarios{
 
 							swal({
 								  title: "¡NO HA VERIFICADO SU CORREO ELECTRÓNICO!",
-								  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo para verififcar la dirección de correo electrónico '.$respuesta["email"].'!",
+								  text: "¡Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo para verificar la dirección de correo electrónico '.$respuesta["email"].'!",
 								  type: "error",
 								  confirmButtonText: "Cerrar",
 								  closeOnConfirm: false

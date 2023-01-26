@@ -92,7 +92,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 							 	
 								<i class="fa fa-th" aria-hidden="true"></i>  
 
-								<span class="col-xs-0 pull-right"> GRID</span>
+								<span class="col-xs-0 pull-right"> CUAD</span>
 
 							 </button>
 
@@ -100,7 +100,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 							 	
 								<i class="fa fa-list" aria-hidden="true"></i> 
 
-								<span class="col-xs-0 pull-right"> LIST</span>
+								<span class="col-xs-0 pull-right"> LISTA</span>
 
 							 </button>
 							
