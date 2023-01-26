@@ -342,45 +342,7 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-							if($detalles["Talla"]!=null){
 
-								echo '<div class="col-md-3 col-xs-12">
-
-									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
-										
-										<option value="">Talla</option>';
-
-										for($i = 0; $i <= count($detalles["Talla"]); $i++){
-
-											echo '<option value="'.$detalles["Talla"][$i].'">'.$detalles["Talla"][$i].'</option>';
-
-										}
-
-									echo '</select>
-
-								</div>';
-
-							}
-
-							if($detalles["Color"]!=null){
-
-								echo '<div class="col-md-3 col-xs-12">
-
-									<select class="form-control seleccionarDetalle" id="seleccionarColor">
-										
-										<option value="">Color</option>';
-
-										for($i = 0; $i <= count($detalles["Color"]); $i++){
-
-											echo '<option value="'.$detalles["Color"][$i].'">'.$detalles["Color"][$i].'</option>';
-
-										}
-
-									echo '</select>
-
-								</div>';
-
-							}
 
 							if($detalles["Marca"]!=null){
 
