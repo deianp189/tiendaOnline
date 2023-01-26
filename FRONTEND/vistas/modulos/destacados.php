@@ -237,7 +237,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 									</button>';
 
-									if($value["tipo"] == "virtual" && $value["precio"] != 0){
+									if($value["tipo"] == "fisico" && $value["precio"] != 0){
 
 										if($value["oferta"] != 0){
 
@@ -364,7 +364,7 @@ for($i = 0; $i < count($titulosModulos); $i ++){
 
 						  		</button>';
 
-						  		if($value["tipo"] == "virtual" && $value["precio"] != 0){
+						  		if($value["tipo"] == "fisico" && $value["precio"] != 0){
 
 										if($value["oferta"] != 0){
 

@@ -201,7 +201,7 @@ $(".agregarCarrito").click(function(){
 	CAPTURAR DETALLES
 	=============================================*/
 //Solo permite agregar al carrito si eliges los detalles (prescindible)
-	if(tipo == "virtual"){
+	if(tipo == "fisico"){
 
 		agregarAlCarrito = true;
 

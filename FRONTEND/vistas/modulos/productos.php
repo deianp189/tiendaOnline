@@ -317,7 +317,7 @@ LISTAR PRODUCTOS
 
 									</button>';
 
-									if($value["tipo"] == "virtual" && $value["precio"] != 0){
+									if($value["tipo"] == "fisico" && $value["precio"] != 0){
 
 										if($value["oferta"] != 0){
 
@@ -444,7 +444,7 @@ LISTAR PRODUCTOS
 
 						  		</button>';
 
-						  		if($value["tipo"] == "virtual" && $value["precio"] != 0){
+						  		if($value["tipo"] == "fisico" && $value["precio"] != 0){
 
 										if($value["oferta"] != 0){
 
