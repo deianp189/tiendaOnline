@@ -66,7 +66,8 @@ FOOTER
 				
 				<h5>
 					
-					<i class="fa fa-phone-square" aria-hidden="true"></i>  (numero de contacto)
+					<i class="fa fa-phone-square" aria-hidden="true"></i>  +34 640 17 52 21
+
 
 					<br><br>
 
@@ -74,7 +75,7 @@ FOOTER
 
 					<br><br>
 
-					<i class="fa fa-map-marker" aria-hidden="true"></i> Dirección
+					<i class="fa fa-map-marker" aria-hidden="true"></i> Camino Caparacena, 4, Pinos Puente
 
 					<br><br>
 					Granada, España
@@ -91,7 +92,8 @@ FOOTER
 				
 				<h4>Nuestra Ubicación</h4>
 
-				<iframe src="https://maps.google.com/?ll=37.1810095,-3.6262914&z=11&output=embed" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<!-- <iframe src="https://maps.google.com/?ll=37.1810095,-3.6262914&z=11&output=embed" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1297.158962470523!2d-3.7518072610688087!3d37.257589779227864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6dffe7b8585315%3A0x5eb14a004139b708!2sMateriales%20de%20Construcci%C3%B3n%20Casari!5e0!3m2!1ses!2sus!4v1674682872001!5m2!1ses!2sus" width="130%" height="300" frameborder="0" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					
 			</div>
 			

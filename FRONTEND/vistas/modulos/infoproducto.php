@@ -140,7 +140,7 @@ INFOPRODUCTOS
 				COMPARTIR EN REDES SOCIALES
 				======================================-->
 
-				<div class="col-xs-6">
+				<!-- <div class="col-xs-6">
 					
 					<h6>
 						
@@ -170,7 +170,7 @@ INFOPRODUCTOS
 
 					</h6>
 
-				</div>
+				</div> -->
 
 				<div class="clearfix"></div>
 
@@ -607,7 +607,7 @@ INFOPRODUCTOS
 
 						if(isset($_SESSION["validarSesion"]) && $_SESSION["validarSesion"] == "ok"){
 
-							if($infoproducto["tipo"]=="virtual"){
+							/*if($infoproducto["tipo"]=="virtual"){
 						
 								echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="'.$infoproducto["id"].'" idUsuario="'.$_SESSION["id"].'" tipo="'.$infoproducto["tipo"].'" titulo="'.$infoproducto["titulo"].'">ACCEDER AHORA</button>';
 
@@ -626,7 +626,7 @@ INFOPRODUCTOS
 									</div>
 								';
 
-							}
+							}*/
 
 						}else{
 
