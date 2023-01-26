@@ -41,16 +41,6 @@ $rutaModulos = array("lo-mas-vendido","lo-mas-visto");
 $base = 0;
 $tope = 4;
 
-// if($titulosModulos[0] == "ARTÍCULOS GRATUITOS"){
-
-// $ordenar = "id";
-// $item = "precio";
-// $valor = 0;
-// $modo = "DESC";
-
-// $gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
-
-// }
 
 if($titulosModulos[0] == "LO MÁS VENDIDO"){
 

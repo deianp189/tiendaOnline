@@ -288,7 +288,7 @@ INFOPRODUCTOS
 
 					if($infoproducto["precio"] == 0){
 
-						echo '<h2 class="text-muted">GRATIS</h2>';
+						echo '<h2 class="text-muted"></h2>';
 
 					}else{
 
@@ -567,38 +567,9 @@ INFOPRODUCTOS
 
 						echo '<div class="col-md-6 col-xs-12">';
 
-						if(isset($_SESSION["validarSesion"]) && $_SESSION["validarSesion"] == "ok"){
 
-							/*if($infoproducto["tipo"]=="virtual"){
-						
-								echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="'.$infoproducto["id"].'" idUsuario="'.$_SESSION["id"].'" tipo="'.$infoproducto["tipo"].'" titulo="'.$infoproducto["titulo"].'">ACCEDER AHORA</button>';
+								echo '<a href="catalogo/general_2023.pdf" download <button class="btn btn-default btn-block btn-lg backColor agregarGratis" href="/docu.pdf">DESCARGAR</button></a>';
 
-							}else{
-
-								echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="'.$infoproducto["id"].'" idUsuario="'.$_SESSION["id"].'" tipo="'.$infoproducto["tipo"].'" titulo="'.$infoproducto["titulo"].'">SOLICITAR AHORA</button>
-
-									<br>
-
-									<div class="col-xs-12 panel panel-info text-left">
-
-									<strong>¡Atención!</strong>
-
-										El producto a solicitar es totalmente gratuito y se enviará a la dirección solicitada, sólo se cobrará los cargos de envío.
-
-									</div>
-								';
-
-							}*/
-
-						}else{
-
-							echo '<a href="#modalIngreso" data-toggle="modal">
-
-								<button class="btn btn-default btn-block btn-lg backColor">	SOLICITAR AHORA</button>
-
-							</a>';
-
-						}
 
 						echo '</div>';
 
