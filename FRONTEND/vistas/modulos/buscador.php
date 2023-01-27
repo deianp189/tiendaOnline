@@ -168,8 +168,6 @@ LISTAR PRODUCTOS
 
 							</figure>
 
-							'.$value["id"].'
-
 							<h4>
 					
 								<small>

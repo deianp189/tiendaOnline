@@ -35,12 +35,6 @@ TOP
 					</li>
 
 					<li>
-						<a href="http://google.com/" target="_blank">
-							<i class="fa fa-google-plus redSocial googleBlanco" aria-hidden="true"></i>
-						</a>
-					</li>
-
-					<li>
 						<a href="http://instagram.com/" target="_blank">
 							<i class="fa fa-instagram redSocial instagramBlanco" aria-hidden="true"></i>
 						</a>

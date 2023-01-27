@@ -170,34 +170,6 @@ TOP
 
 						}
 
-						if($_SESSION["modo"] == "facebook"){
-
-							echo '<li>
-
-									<img class="img-circle" src="'.$_SESSION["foto"].'" width="10%">
-
-								   </li>
-								   <li>|</li>
-						 		   <li><a href="'.$url.'perfil">Ver Perfil</a></li>
-						 		   <li>|</li>
-						 		   <li><a href="'.$url.'salir" class="salir">Salir</a></li>';
-
-						}
-
-						if($_SESSION["modo"] == "google"){
-
-							echo '<li>
-
-									<img class="img-circle" src="'.$_SESSION["foto"].'" width="10%">
-
-								   </li>
-								   <li>|</li>
-						 		   <li><a href="'.$url.'perfil">Ver Perfil</a></li>
-						 		   <li>|</li>
-						 		   <li><a href="'.$url.'salir">Salir</a></li>';
-
-						}
-
 					}
 
 				}else{
@@ -378,41 +350,11 @@ VENTANA MODAL PARA EL REGISTRO
            <button type="button" class="close" data-dismiss="modal">&times;</button>
         	
 			<!--=====================================
-			REGISTRO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-				
-				<p>
-				  <i class="fa fa-facebook"></i>
-					Registro con Facebook
-				</p>
-
-			</div>
-
-			<!--=====================================
-			REGISTRO GOOGLE
-			======================================-->
-			<a href="<?php echo $rutaGoogle; ?>">
-
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Registro con Google
-					</p>
-
-				</div>
-			</a>
-
-			<!--=====================================
 			REGISTRO DIRECTO
 			======================================-->
 
 			<form method="post" onsubmit="return registroUsuario()">
 				
-			<hr>
-
 				<div class="form-group">
 					
 					<div class="input-group">
@@ -532,43 +474,12 @@ VENTANA MODAL PARA EL INGRESO
         	<h3 class="backColor">INGRESAR</h3>
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        	
-			<!--=====================================
-			INGRESO FACEBOOK
-			======================================-->
-
-			<div class="col-sm-6 col-xs-12 facebook">
-				
-				<p>
-				  <i class="fa fa-facebook"></i>
-					Ingreso con Facebook
-				</p>
-
-			</div>
-
-			<!--=====================================
-			INGRESO GOOGLE
-			======================================-->
-			<a href="<?php echo $rutaGoogle; ?>">
-			
-				<div class="col-sm-6 col-xs-12 google">
-					
-					<p>
-					  <i class="fa fa-google"></i>
-						Ingreso con Google
-					</p>
-
-				</div>
-
-			</a>
 
 			<!--=====================================
 			INGRESO DIRECTO
 			======================================-->
 
 			<form method="post">
-				
-			<hr>
 
 				<div class="form-group">
 					

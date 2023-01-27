@@ -133,76 +133,76 @@ SECCIÓN PERFIL
 												if($value2["tipo"] == "virtual"){
 
 													echo '<a href="'.$url.'curso/'.$value1["id"].'/'.$value1["id_usuario"].'/'.$value1["id_producto"].'/'.$value2["ruta"].'">
-														<button class="btn btn-default pull-left">Ir al curso</button>
+														
 														</a>';
 
 												}else{
 
-													echo '<h6>Proceso de entrega: '.$value2["entrega"].' días hábiles</h6>';
+													
+											//Para determinar cuandos e ha enviado y cuandoe ste en proceosd e envio
+													// if($value1["envio"] == 0){
 
-													if($value1["envio"] == 0){
+													// 	echo '<div class="progress">
 
-														echo '<div class="progress">
+													// 		<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-check"></i> Despachado
+													// 		</div>
 
-															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
-															</div>
+													// 		<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-clock-o"></i> Enviando
+													// 		</div>
 
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Enviando
-															</div>
+													// 		<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-clock-o"></i> Entregado
+													// 		</div>
 
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
+													// 	</div>';
 
-														</div>';
+													// }
 
-													}
+													// if($value1["envio"] == 1){
 
-													if($value1["envio"] == 1){
+													// 	echo '<div class="progress">
 
-														echo '<div class="progress">
+													// 		<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-check"></i> Despachado
+													// 		</div>
 
-															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
-															</div>
+													// 		<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-check"></i> Enviando
+													// 		</div>
 
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Enviando
-															</div>
+													// 		<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-clock-o"></i> Entregado
+													// 		</div>
 
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-clock-o"></i> Entregado
-															</div>
+													// 	</div>';
 
-														</div>';
+													// }
 
-													}
+													// if($value1["envio"] == 2){
 
-													if($value1["envio"] == 2){
+													// 	echo '<div class="progress">
 
-														echo '<div class="progress">
+													// 		<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-check"></i> Despachado
+													// 		</div>
 
-															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Despachado
-															</div>
+													// 		<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-check"></i> Enviando
+													// 		</div>
 
-															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Enviando
-															</div>
+													// 		<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
+													// 			<i class="fa fa-check"></i> Entregado
+													// 		</div>
 
-															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
-																<i class="fa fa-check"></i> Entregado
-															</div>
+													// 	</div>';
 
-														</div>';
-
-													}
+													// }
 
 												}
 
-												echo '<h4 class="pull-right"><small>Comprado el '.substr($value1["fecha"],0,-8).'</small></h4>
+												echo '
 																
 											</div>
 
@@ -215,129 +215,117 @@ SECCIÓN PERFIL
 
 												echo '<div class="pull-right">
 
-													<a class="calificarProducto" href="#modalComentarios" data-toggle="modal" idComentario="'.$comentarios["id"].'">
-													
-														<button class="btn btn-default backColor">Calificar Producto</button>
-
-													</a>
-
 												</div>
+
+												<h4 class="pull-right"><small>Comprado el '.substr($value1["fecha"],0,-8).'</small></h4>
 
 												<br><br>
 
 												<div class="pull-right">
 
 													<h3 class="text-right">';
+									
+										//Sistema de calificacion (fallo)
+													// if($comentarios["calificacion"] == 0 && $comentarios["comentario"] == ""){
 
-													if($comentarios["calificacion"] == 0 && $comentarios["comentario"] == ""){
+													// 	echo '<i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			<i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			<i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			<i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			<i class="fa fa-star-o text-success" aria-hidden="true"></i>';
 
-														echo '<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																<i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// }else{
 
-													}else{
+													// 	switch($comentarios["calificacion"]){
 
-														switch($comentarios["calificacion"]){
+													// 		case 0.5:
+													// 		echo '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 0.5:
-															echo '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 1.0:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 1.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 1.5:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 1.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 2.0:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 2.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 2.5:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 2.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 3.0:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 3.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 3.5:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 3.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 4.0:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 4.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 4.5:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 4.5:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>';
-															break;
+													// 		case 5.0:
+													// 		echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>
+													// 			  <i class="fa fa-star text-success" aria-hidden="true"></i>';
+													// 		break;
 
-															case 5.0:
-															echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>
-																  <i class="fa fa-star text-success" aria-hidden="true"></i>';
-															break;
-
-														}
+													// 	}
 
 
-													}
+													// }
 												
 														
 													echo '</h3>
 
-													<p class="panel panel-default text-right" style="padding:5px">
-
-														<small>
-
-														'.$comentarios["comentario"].'
-
-														</small>
-													
-													</p>
 
 												</div>
 
