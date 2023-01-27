@@ -48,7 +48,7 @@ INFOPRODUCTOS
 				VISOR DE IMÁGENES
 				=============================================*/
 
-				if($infoproducto["tipo"] == "fisico"){
+				if($infoproducto["tipo"] == "fisico" || $infoproducto["tipo"] == "suelo"){
 
 					echo '<div class="col-md-5 col-sm-6 col-xs-12 visorImg">
 						
@@ -107,7 +107,7 @@ INFOPRODUCTOS
 
 			<?php
 
-				if($infoproducto["tipo"] == "fisico"){
+				if($infoproducto["tipo"] == "fisico" || $infoproducto["tipo"] == "suelo"){
 
 					echo '<div class="col-md-7 col-sm-6 col-xs-12">';
 
@@ -340,9 +340,27 @@ INFOPRODUCTOS
 
 						$detalles = json_decode($infoproducto["detalles"], true);
 
-						if($infoproducto["tipo"] == "fisico"){
+						if($infoproducto["tipo"] == "suelo"){
 
+							if($detalles["Metro/s"]!=null){
 
+								echo '<div class="col-md-3 col-xs-12">
+
+									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
+										
+										<option value="">Metro/s</option>';
+
+										for($i = 0; $i <= count($detalles["Metro/s"]); $i++){
+
+											echo '<option value="'.$detalles["Metro/s"][$i].'">'.$detalles["Metro/s"][$i].'</option>';
+
+										}
+
+									echo '</select>
+
+								</div>';
+
+							}
 
 							if($detalles["Marca"]!=null){
 
@@ -363,31 +381,6 @@ INFOPRODUCTOS
 								</div>';
 
 							}
-
-						}else{
-
-							echo '<div class="col-xs-12">
-
-								<li>
-									<i style="margin-right:10px" class="fa fa-play-circle"></i> '.$detalles["Clases"].'
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-clock-o"></i> '.$detalles["Tiempo"].'
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-check-circle"></i> '.$detalles["Nivel"].'
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-info-circle"></i> '.$detalles["Acceso"].'
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-desktop"></i> '.$detalles["Dispositivo"].'
-								</li>
-								<li>
-									<i style="margin-right:10px" class="fa fa-trophy"></i> '.$detalles["Certificado"].'
-								</li>
-
-							</div>';
 
 						}
 
@@ -1382,7 +1375,7 @@ VENTANA MODAL PARA CHECKOUT
 
 <?php
 
-if($infoproducto["tipo"] == "fisico"){
+if($infoproducto["tipo"] == "fisico" || $infoproducto["tipo"] == "suelo"){
 
 	echo '<script type="application/ld+json">
 

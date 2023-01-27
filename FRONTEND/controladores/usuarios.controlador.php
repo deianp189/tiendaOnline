@@ -46,8 +46,10 @@ class ControladorUsuarios{
 					$mail->Host = 'smtp.mailtrap.io';
 					$mail->SMTPAuth = true;
 					$mail->Port = 2525;
-					$mail->Username = '298037d288d2af';
-					$mail->Password = '9de1f638640962';
+					// $phpmailer->Username = '2f5965f609acad';
+					// $phpmailer->Password = '326effb5b2aa66';
+					$mail->Username = '2f5965f609acad';
+					$mail->Password = '326effb5b2aa66';
 					$mail->CharSet = 'UTF-8';
 					$mail->setFrom('casari@gmail.com', 'CASARI');
 					$mail->addReplyTo('casari@gmail.com', 'CASARI');
@@ -359,8 +361,8 @@ class ControladorUsuarios{
 						$mail->Host = 'smtp.mailtrap.io';
 						$mail->SMTPAuth = true;
 						$mail->Port = 2525;
-						$mail->Username = '298037d288d2af';
-						$mail->Password = '9de1f638640962';
+						$mail->Username = '2f5965f609acad';
+						$mail->Password = '326effb5b2aa66';
 						$mail->CharSet = 'UTF-8';
 						$mail->setFrom('casari@gmail.com', 'CASARI');
 						$mail->addReplyTo('casari@gmail.com', 'CASARI');
@@ -970,8 +972,8 @@ class ControladorUsuarios{
 					$mail->Host = 'smtp.mailtrap.io';
 					$mail->SMTPAuth = true;
 					$mail->Port = 2525;
-					$mail->Username = '298037d288d2af';
-					$mail->Password = '9de1f638640962';
+					$mail->Username = '2f5965f609acad';
+					$mail->Password = '326effb5b2aa66';
 					$mail->CharSet = 'UTF-8';
 					$mail->setFrom('casari@gmail.com', 'CASARI');
 					$mail->addReplyTo('casari@gmail.com', 'CASARI');

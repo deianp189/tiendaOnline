@@ -204,6 +204,38 @@ $(".agregarCarrito").click(function(){
 
 		agregarAlCarrito = true;
 
+	}else{
+
+		var seleccionarDetalle = $(".seleccionarDetalle");
+		
+		for(var i = 0; i < seleccionarDetalle.length; i++){
+
+			console.log("seleccionarDetalle", $(seleccionarDetalle[i]).val());
+
+			if($(seleccionarDetalle[i]).val() == ""){
+
+				swal({
+					  title: "Debe seleccionar los metros",
+					  text: "",
+					  type: "warning",
+					  showCancelButton: false,
+					  confirmButtonColor: "#DD6B55",
+					  confirmButtonText: "¡Seleccionar!",
+					  closeOnConfirm: false
+					})
+
+				return;
+
+			}else{
+
+				titulo = titulo + "-" + $(seleccionarDetalle[i]).val();
+
+				agregarAlCarrito = true;
+
+			}
+
+		}		
+
 	}		
 
 	/*=============================================
