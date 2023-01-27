@@ -204,39 +204,7 @@ $(".agregarCarrito").click(function(){
 
 		agregarAlCarrito = true;
 
-	}else{
-
-		var seleccionarDetalle = $(".seleccionarDetalle");
-		
-		for(var i = 0; i < seleccionarDetalle.length; i++){
-
-			console.log("seleccionarDetalle", $(seleccionarDetalle[i]).val());
-
-			if($(seleccionarDetalle[i]).val() == ""){
-
-				swal({
-					  title: "Debe seleccionar Talla y Color",
-					  text: "",
-					  type: "warning",
-					  showCancelButton: false,
-					  confirmButtonColor: "#DD6B55",
-					  confirmButtonText: "¡Seleccionar!",
-					  closeOnConfirm: false
-					})
-
-				return;
-
-			}else{
-
-				titulo = titulo + "-" + $(seleccionarDetalle[i]).val();
-
-				agregarAlCarrito = true;
-
-			}
-
-		}		
-
-	}
+	}		
 
 	/*=============================================
 	ALMACENAR EN EL LOCALSTARGE LOS PRODUCTOS AGREGADOS AL CARRITO
@@ -931,15 +899,15 @@ $(".btnPagar").click(function(){
 
 	var tipo = $(this).attr("tipo");
 
-	if(tipo == "fisico" && $("#seleccionarPais").val() == ""){
+	// if(tipo == "virtual" && $("#seleccionarPais").val() == ""){
 
-		$(".btnPagar").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
+	// 	$(".btnPagar").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
 
-		return;
+	// 	return;
 
-	}
+	// }
 
-	var divisa = $("#cambiarDivisa").val();
+	//var divisa = $("#cambiarDivisa").val();
 	var total = $(".valorTotalCompra").html();
 	var totalEncriptado = localStorage.getItem("total");
 	var impuesto = $(".valorTotalImpuesto").html();

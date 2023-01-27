@@ -22,6 +22,56 @@ use PayPal\Api\PaymentExecution;
 PAGO PAYPAL
 =============================================*/
 
+   #recibo los productos comprados
+   $productos = explode("-", $_GET['productos']);
+   $cantidad = explode("-", $_GET['cantidad']);
+   $pago = explode("-", $_GET['pago']);
+
+      #Actualizamos la base de datos
+      for($i = 0; $i < count($productos); $i++){
+
+         $datos = array("idUsuario"=>$_SESSION["id"],
+                     "idProducto"=>$productos[$i],
+                     "metodo"=>"paypal",
+                     //"email"=>$emailComprador,
+                     //"direccion"=>$direccion,
+                     //"pais"=>$pais,
+                     "cantidad"=>$cantidad[$i],
+                     //"detalle"=>$datosUsuario->transactions[0]->item_list->items[$i]->name,
+                     "pago"=>$pago[$i]);
+
+         $respuesta = ControladorCarrito::ctrNuevasCompras($datos);
+
+         $ordenar = "id";
+         $item = "id";
+         $valor = $productos[$i];
+
+         $productosCompra = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
+
+         foreach ($productosCompra as $key => $value) {
+
+            $item1 = "ventas";
+            $valor1 = $value["ventas"] + $cantidad[$i];
+            $item2 = "id";
+            $valor2 =$value["id"];
+
+            $actualizarCompra = ControladorProductos::ctrActualizarProducto($item1, $valor1, $item2, $valor2);
+            
+         }
+
+         if($respuesta == "ok" && $actualizarCompra == "ok"){
+
+            echo '<script>
+
+            localStorage.removeItem("listaProductos");
+            localStorage.removeItem("cantidadCesta");
+            localStorage.removeItem("sumaCesta");
+            window.location = "'.$url.'perfil";
+
+            </script>';
+
+         }
+
 #evaluamos si la compra está aprobada
 if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 
@@ -46,6 +96,8 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 
    $datosUsuario = json_decode($datosTransaccion);
 
+
+
    $emailComprador = $datosUsuario->payer->payer_info->email;
    $dir = $datosUsuario->payer->payer_info->shipping_address->line1;
    $ciudad = $datosUsuario->payer->payer_info->shipping_address->city;
@@ -63,7 +115,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
                      "metodo"=>"paypal",
                      "email"=>$emailComprador,
                      "direccion"=>$direccion,
-                     "pais"=>$pais,
+                     //"pais"=>$pais,
                      "cantidad"=>$cantidad[$i],
                      "detalle"=>$datosUsuario->transactions[0]->item_list->items[$i]->name,
                      "pago"=>$pago[$i]);
@@ -102,6 +154,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
 
    }
 
+}
 /*=============================================
  PAGO PAYU prescindible
 =============================================*/
@@ -210,50 +263,51 @@ ADQUISICIONES GRATUITAS prescindible
 =============================================*/
 else if(isset( $_GET['gratis']) && $_GET['gratis'] === 'true'){
 
-   $producto = $_GET['producto'];
-   $titulo = $_GET['titulo'];
+      $producto = $_GET['producto'];
+      $titulo = $_GET['titulo'];
 
-   $datos = array(  "idUsuario"=>$_SESSION["id"],
-                    "idProducto"=>$producto,
-                    "metodo"=>"gratis",
-                    "email"=>$_SESSION["email"],
-                    "direccion"=>"",
-                    "pais"=>"",
-                    "cantidad"=>"",
-                    "detalle"=>"",
-                    "pago"=>"");
+      $datos = array(  "idUsuario"=>$_SESSION["id"],
+                     "idProducto"=>$producto,
+                     "metodo"=>"gratis",
+                     "email"=>$_SESSION["email"],
+                     "direccion"=>"",
+                     "pais"=>"",
+                     "cantidad"=>"",
+                     "detalle"=>"",
+                     "pago"=>"");
 
-   $respuesta = ControladorCarrito::ctrNuevasCompras($datos);
+      $respuesta = ControladorCarrito::ctrNuevasCompras($datos);
 
-   $ordenar = "id";
-   $item = "id";
-   $valor = $producto;
+      $ordenar = "id";
+      $item = "id";
+      $valor = $producto;
 
-   $productosGratis = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
+      $productosGratis = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
 
-   foreach ($productosGratis as $key => $value) {
-    
-         $item1 = "ventasGratis";
-         $valor1 = $value["ventasGratis"] + 1;
-         $item2 = "id";
-         $valor2 =$value["id"];
+      foreach ($productosGratis as $key => $value) {
+      
+            $item1 = "ventasGratis";
+            $valor1 = $value["ventasGratis"] + 1;
+            $item2 = "id";
+            $valor2 =$value["id"];
 
-         $actualizarSolicitud = ControladorProductos::ctrActualizarProducto($item1, $valor1, $item2, $valor2);
+            $actualizarSolicitud = ControladorProductos::ctrActualizarProducto($item1, $valor1, $item2, $valor2);
+      }
+
+      if($respuesta == "ok" && $actualizarSolicitud == "ok"){
+
+         echo '<script>
+            
+               window.location = "'.$url.'ofertas/aviso";
+
+            </script>';
+
+      }
+
+   }else{
+
+      echo '<script>window.location = "'.$url.'cancelado";</script>';
+
+
    }
-
-   if($respuesta == "ok" && $actualizarSolicitud == "ok"){
-
-      echo '<script>
-         
-            window.location = "'.$url.'ofertas/aviso";
-
-         </script>';
-
-   }
-
-}else{
-
-   echo '<script>window.location = "'.$url.'cancelado";</script>';
-
-
 }

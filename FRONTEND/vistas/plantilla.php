@@ -102,7 +102,7 @@
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
 	<script src="<?php echo $url; ?>vistas/js/plugins/sweetalert.min.js"></script>
-	<!-- prescindible? -->
+	<!-- prescindible -->
 	<script src="<?php echo $url; ?>vistas/js/plugins/md5-min.js"></script>
 	<script src="<?php echo $url; ?>vistas/js/plugins/dscountdown.min.js"></script>
 	<script src="<?php echo $url; ?>vistas/js/plugins/knob.jquery.js"></script>
