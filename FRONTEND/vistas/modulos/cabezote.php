@@ -543,11 +543,17 @@ VENTANA MODAL PARA EL INGRESO
 					
 					<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
 
+					<br>
+					<br>
+
+					<strong><a onclick="adminPage()" href="" class="adminRef" >Acceso a empleados</a></strong>
+
 				</center>
 
 			</form>
 
         </div>
+
 
         <div class="modal-footer">
           
@@ -558,6 +564,14 @@ VENTANA MODAL PARA EL INGRESO
     </div>
 
 </div>
+
+	<script type="text/javascript">
+		function adminPage(){
+
+			window.open('http://localhost/TIENDAENPHP/backend/login.php');
+
+        }
+    </script>
 
 
 <!--=====================================
