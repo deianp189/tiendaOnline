@@ -136,41 +136,6 @@ INFOPRODUCTOS
 
 				</div>
 
-				<!--=====================================
-				COMPARTIR EN REDES SOCIALES
-				======================================-->
-
-				<!-- <div class="col-xs-6">
-					
-					<h6>
-						
-						<a class="dropdown-toggle pull-right text-muted" data-toggle="dropdown" href="">
-							
-							<i class="fa fa-plus"></i> Compartir
-
-						</a>
-
-						<ul class="dropdown-menu pull-right compartirRedes">
-
-							<li>
-								<p class="btnFacebook">
-									<i class="fa fa-facebook"></i>
-									Facebook
-								</p>
-							</li>
-
-							<li>
-								<p class="btnGoogle">
-									<i class="fa fa-google"></i>
-									Google
-								</p>
-							</li>
-							
-						</ul>
-
-					</h6>
-
-				</div> -->
 
 				<div class="clearfix"></div>
 
@@ -400,10 +365,6 @@ INFOPRODUCTOS
 
 								<span class="label label-default" style="font-weight:100">
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata | 
-									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-									'.$infoproducto["ventasGratis"].' inscritos |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas
 
@@ -417,8 +378,7 @@ INFOPRODUCTOS
 
 								<small>
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata <br>
+									<br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' inscritos <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -432,12 +392,10 @@ INFOPRODUCTOS
 
 							echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
 
-								<hr>
-
+								
 								<span class="label label-default" style="font-weight:100">
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata |
+									
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -453,8 +411,7 @@ INFOPRODUCTOS
 
 								<small>
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata <br> 
+									
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -476,8 +433,7 @@ INFOPRODUCTOS
 
 								<span class="label label-default" style="font-weight:100">
 								
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									'.$infoproducto["entrega"].' días hábiles para la entrega  |
+									
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -493,8 +449,7 @@ INFOPRODUCTOS
 
 								<small>
 								
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									'.$infoproducto["entrega"].' días hábiles para la entrega  <br>
+								<br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -512,8 +467,7 @@ INFOPRODUCTOS
 
 								<span class="label label-default" style="font-weight:100">
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									'.$infoproducto["entrega"].' días hábiles para la entrega |
+								
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -529,8 +483,7 @@ INFOPRODUCTOS
 
 								<small>
 
-									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									'.$infoproducto["entrega"].' días hábiles para la entrega <br>
+									
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -688,10 +641,10 @@ INFOPRODUCTOS
 
 				$cantidadCalificacion = 0;
 
-				if($cantidad == 0){
+				if($cantidad == 0){//fallo
 
-					echo '<li class="active"><a>ESTE PRODUCTO NO TIENE COMENTARIOS</a></li>
-						  <li></li>';
+					// echo '<li class="active"><a>ESTE PRODUCTO NO TIENE COMENTARIOS</a></li>
+					// 	  <li></li>';
 
 				}else{
 

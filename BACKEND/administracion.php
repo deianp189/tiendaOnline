@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+// Desactivar toda las notificaciónes del PHP
+error_reporting(0);
+
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     // Redirigir al archivo de login
@@ -8,7 +11,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     exit;
 }
 
+
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
