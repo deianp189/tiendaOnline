@@ -414,6 +414,7 @@ VENTANA MODAL PARA EL REGISTRO
 
 				</div>
 
+
 				<?php
 
 					$registro = new ControladorUsuarios();
@@ -545,9 +546,6 @@ VENTANA MODAL PARA EL INGRESO
 		function adminPage(){
 
 			window.open('http://localhost/TIENDAENPHP/backend/login.php');
-			//Hosting
-			//window.open('https://casari.000webhostapp.com/login.php');
-
 
         }
     </script>

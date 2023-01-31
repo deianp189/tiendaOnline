@@ -7,9 +7,3 @@ Options All -Indexes
 RewriteEngine On
 
 RewriteRule ^([-a-zA-Z0-9ñÑ_/]+)$ index.php?ruta=$1
-
-# Url Amigables admin
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
