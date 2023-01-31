@@ -4,6 +4,12 @@ $user = "root"; //reemplazar por el nombre de usuario correspondiente
 $password = ""; //reemplazar por la contraseña correspondiente
 $dbname = "ecomerce"; //reemplazar por el nombre de la base de datos correspondiente
 
+//Hosting
+// $host = "localhost";
+// $user = "id20205759_root"; 
+// $password = "i%]n7Rg<pYVoU/?E"; 
+// $dbname = "id20205759_ecomerce"; 
+
 // Crear conexión
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
