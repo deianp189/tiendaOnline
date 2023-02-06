@@ -30,7 +30,7 @@ $plantilla -> plantilla();
 
 <script type="text/javascript">
     var _iub = _iub || [];
-    _iub.csConfiguration = {"floatingPreferencesButtonDisplay":"bottom-right","lang":"es","perPurposeConsent":true,"siteId":2963227,"whitelabel":false,"cookiePolicyId":83372054, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"listPurposes":true,"position":"float-top-center","rejectButtonDisplay":true }};
+    _iub.csConfiguration = {"floatingPreferencesButtonDisplay":"","lang":"es","perPurposeConsent":true,"siteId":2963227,"whitelabel":false,"cookiePolicyId":83372054, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":true,"customizeButtonDisplay":true,"listPurposes":true,"position":"float-top-center","rejectButtonDisplay":true }};
     </script>
     <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async>
 </script>
